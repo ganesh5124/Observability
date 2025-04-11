@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . ./
 
-RUN go build -o service-b .
+RUN GOOS=linux GOARCH=amd64 go build -o service-b .
 
 # Use a minimal image for the runtime
 FROM alpine:latest

@@ -8,6 +8,10 @@ const app = express();
 const PORT = 3002;
 app.use(morgan('common'))
 
+app.get('/', (req, res) => {
+  res.send('Sevice B Home page!');
+});
+
 app.get('/hello', (req, res) => {
   res.send('Hello from Service B!');
 });

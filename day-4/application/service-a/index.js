@@ -134,7 +134,11 @@ app.get('/metrics', async (req, res) => {
 
 // Calling to service-b
 app.get('/call-service-b', async (req, res) => {
+    console.log('Calling Service B...');
+    console.log(`Service B URI: ${process.env.SERVICE_B_URI} , ${process}, ${process.env}`);
   try {
+    console.log('Calling Service B...');
+    console.log(`Service B URI: ${process.env.SERVICE_B_URI} , ${process}, ${process.env}`);
     const response = await axios.get(`${process.env.SERVICE_B_URI}/hello`);
     res.send(`<h1 style="font-size: 100px">Service B says: ${response.data}<h1>`);
   } catch (error) {
